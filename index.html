@@ -36,37 +36,7 @@
             </div>
         </div>
     </main>
-    <script>
-        const frm = document.getElementById("formula");
-        const resp = document.querySelector(".resposta");
-
-        frm.addEventListener("submit", (e) => {
-            const nome = document.getElementById("innome").value;
-            const altura = Number(document.getElementById("inaltura").value);
-            const peso = Number(document.getElementById("inpeso").value);
-
-            const IMC = peso / (altura * altura);
-
-            if (IMC < 18.5) {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está abaixo do peso`
-            } else if (IMC < 25) {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com peso normal`
-            } else if (IMC < 30) {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está sobrepeso`
-            } else if (IMC < 35) {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau I`
-            } else if (IMC < 40) {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau II`
-            } else {
-                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau III`
-            }
-
-            e.preventDefault();
-        });
-
-
-
-    </script>
+    <script src="imc.js"></script>
 </body>
 
 </html>
