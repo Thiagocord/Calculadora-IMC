@@ -1,10 +1,10 @@
 const frm = document.getElementById("formula");
-const resp = document.querySelector(".resposta");
 
 frm.addEventListener("submit", (e) => {
-    const nome = document.getElementById("innome").value;
-    const altura = Number(document.getElementById("inaltura").value);
-    const peso = Number(document.getElementById("inpeso").value);
+    const resp = document.querySelector(".resposta");
+    const nome = frm.innome.value;
+    const altura = Number(frm.inaltura.value);
+    const peso = Number(frm.inpeso.value);
 
     const IMC = peso / (altura * altura);
 
