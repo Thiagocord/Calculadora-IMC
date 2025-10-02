@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <DIV class="cabeca">
+                <h1>Calculadora - IMC</h1>
+            </DIV>
+            <form action="" id="formula">
+                <p>
+                    <label for="innome">nome:</label>
+                    <input type="text" name="innome" id="innome" required>
+                </p>
+                <p>
+                    <label for="inaltura">Altura:</label>
+                    <input type="number" name="inaltura" id="inaltura" step="0.01" required>
+                </p>
+                <p>
+                    <label for="inpeso">Peso:</label>
+                    <input type="number" name="inpeso" id="inpeso" required>
+                </p>
+                <p>
+                    <input type="submit" value="Calcular" id="btn">
+                </p>
+            </form>
+            <div class="resposta">
+
+            </div>
+        </div>
+    </main>
+    <script>
+        const frm = document.getElementById("formula");
+        const resp = document.querySelector(".resposta");
+
+        frm.addEventListener("submit", (e) => {
+            const nome = document.getElementById("innome").value;
+            const altura = Number(document.getElementById("inaltura").value);
+            const peso = Number(document.getElementById("inpeso").value);
+
+            const IMC = peso / (altura * altura);
+
+            if (IMC < 18.5) {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está abaixo do peso`
+            } else if (IMC < 25) {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com peso normal`
+            } else if (IMC < 30) {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está sobrepeso`
+            } else if (IMC < 35) {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau I`
+            } else if (IMC < 40) {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau II`
+            } else {
+                resp.innerText = `${nome} seu IMC é ${IMC.toFixed(1)} e você está com Obesidade Grau III`
+            }
+
+            e.preventDefault();
+        });
+
+
+
+    </script>
+</body>
+
+</html>
